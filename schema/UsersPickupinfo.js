@@ -5,7 +5,11 @@ cube(`UsersPickupinfo`, {
     UsersCustomuser:{
       relationship: `hasOne`,
       sql: `${UsersPickupinfo}.user_id = ${UsersCustomuser}.id`
-    }
+    },
+    UsersAddress:{
+      relationship: `hasMany`,
+      sql: `${UsersPickupinfo}.user_id = ${UsersAddress}.user_id`
+    },
   },
 
   measures: {

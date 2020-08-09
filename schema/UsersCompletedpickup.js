@@ -9,7 +9,11 @@ cube(`UsersCompletedpickup`, {
     UsersCustomuser:{
       relationship: `hasOne`,
       sql: `${UsersCompletedpickup}.user_id = ${UsersCustomuser}.id`
-    }
+    },
+    UsersAddress:{
+      relationship: `hasMany`,
+      sql: `${UsersCompletedpickup}.user_id = ${UsersAddress}.user_id`
+    },
   },
   measures: {
     count: {
